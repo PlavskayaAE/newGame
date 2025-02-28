@@ -24,16 +24,8 @@ public class Main {
 
         makeDirectory(directoryList);
         makeFile(fileList);
+        makeLog("C://Users//Александра//Desktop//Games//temp//temp.txt");
 
-        String logString = log.toString();
-
-        try {
-            FileWriter t = new FileWriter("C://Users//Александра//Desktop//Games//temp//temp.txt", true);
-            t.write(logString);
-            t.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
     }
 
     public static void newDirectory(String path) {
@@ -63,6 +55,17 @@ public class Main {
             } catch (IOException e) {
                 System.out.println("Ошибка создания файла " + list.get(i).getName());
             }
+        }
+    }
+
+    public static void makeLog(String name) {
+        String logString = log.toString();
+        try {
+            FileWriter t = new FileWriter(name, true);
+            t.write(logString);
+            t.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
     }
 
